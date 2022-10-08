@@ -4,7 +4,7 @@ import { News } from "../models/News";
 
 export const appDataSource = new DataSource({
     type: 'postgres',
-    host: 'localhost',
+    host: '103.250.10.192',
     port: 5432,
     username: "root",
     password: "root",

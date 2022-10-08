@@ -15,7 +15,8 @@ app.use(bodyParser.urlencoded({
 
 const blogController = new BlogController()
 
-app.get("/news", blogController.getAllItem)  
+app.get("/news", blogController.getAllItem)
+app.post("/create-news", blogController.createBlog)
 
 
 app.listen(port, () => console.log("[command] : Server Running On 3000"))

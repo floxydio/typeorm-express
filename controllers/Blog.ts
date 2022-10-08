@@ -7,13 +7,13 @@ export class BlogController {
     public async getAllItem(req: Request, res: Response) {
        const app = appDataSource.getRepository(News)
 
-       const data = app.find()
+       const data = await app.find()
 
 
        res.send({
         status: 200,
         message: "All Data Blog",
-        data: (await data).map
+        data: data
        })
     }
 
