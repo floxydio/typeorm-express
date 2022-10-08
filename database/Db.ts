@@ -15,6 +15,6 @@ export const appDataSource = new DataSource({
 
 appDataSource.initialize()
     .then(() => {
-        console.log("[DB-Postgres]: Is Connected")
+        console.log("[DB-Postgr es]: Is Connected")
     })
     .catch((error) => console.log(error))

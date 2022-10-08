@@ -27,7 +27,21 @@ export class BlogController {
         res.send({
             message: "Successfully Create Blog"
         })
+    }
 
+    public async getBlogById(req: Request, res: Response) {
+        const paramsSlug = req.params.slug
+        const app = appDataSource.getRepository(News)
+
+        const data = await app.findOneBy({
+            id: Number(paramsSlug)
+        })
+
+        res.send({
+            status: 200,
+            data: data,
+            message: `Successfully Get Detail ${paramsSlug}`
+        })
     }
 
 }
