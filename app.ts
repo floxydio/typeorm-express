@@ -20,4 +20,4 @@ app.get("/news/:slug", blogController.getBlogById) /* GET BLOG BY ID */
 app.post("/create-news", blogController.createBlog) /* CREATE BLOG */
 
 
-app.listen(port, () => console.log("[command] : Server Running On 3000"))
+app.listen(port, () => console.log("[command] : Server Running"))

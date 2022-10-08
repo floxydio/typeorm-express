@@ -7,9 +7,11 @@ export class BlogController {
     public async getAllItem(req: Request, res: Response) {
        const app = appDataSource.getRepository(News)
 
-       const data = await app.find()
-
-
+       const data = await app.find({
+        order:{
+            id: "DESC"
+        }
+       })
        res.send({
         status: 200,
         message: "All Data Blog",
@@ -18,9 +20,12 @@ export class BlogController {
     }
 
     public async createBlog(req: Request, res: Response) {
+        const timestamp = 1643200384959;
+        const date = new Date(timestamp);
         const news = new News()
         news.title = req.body.title
         news.description = req.body.description
+        news.created =  date
         const app = appDataSource.getRepository(News)
         await app.save(news)
 
